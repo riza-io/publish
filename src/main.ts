@@ -1,4 +1,5 @@
 import * as core from '@actions/core';
+import * as exec from '@actions/exec';
 import * as github from '@actions/github';
 import * as tc from '@actions/tool-cache';
 
@@ -8,8 +9,8 @@ async function run() {
   console.log(`cli: ${cliPath}`);
   console.log(`ext: ${extPath}`);
   
-  // const cachedPath = await tc.cacheFile(extPath, 'riza', 'riza', 'ea65f1553ae280357102c92562e4393a8439ee1f');
-  // core.addPath(cachedPath);
+  const cachedPath = await tc.cacheDir(extPath, 'riza', 'ea65f1553ae280357102c92562e4393a8439ee1f');
+  core.addPath(cachedPath);
   
   try {
     // `who-to-greet` input defined in action metadata file
@@ -20,6 +21,9 @@ async function run() {
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2)
     console.log(`The event payload: ${payload}`);
+
+    // Exec tool
+    await exec.exec('riza');
   } catch (error) {
     core.setFailed(error.message);
   }
