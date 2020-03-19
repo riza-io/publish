@@ -1269,9 +1269,10 @@ const exec = __importStar(__webpack_require__(986));
 const tc = __importStar(__webpack_require__(533));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const cliPath = yield tc.downloadTool('https://bin.equinox.io/a/cKDFpAZ81wg/riza-f5162f7233bd59bfac4b598aca2f82776639a90e-linux-amd64.tar.gz');
+        const assetId = '2Wx2H8629BG';
+        const cliPath = yield tc.downloadTool(`https://bin.equinox.io/a/${assetId}/riza-linux-amd64.tar.gz`);
         const extPath = yield tc.extractTar(cliPath);
-        const cachedPath = yield tc.cacheDir(extPath, 'riza', 'f5162f7233bd59bfac4b598aca2f82776639a90e');
+        const cachedPath = yield tc.cacheDir(extPath, 'riza', assetId);
         core.addPath(cachedPath);
         try {
             const project = core.getInput('project');
