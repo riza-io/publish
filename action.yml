@@ -1,13 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Riza'
+description: 'Publish file descriptor sets to Riza'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  project:  # id of project
+    description: 'Riza project ID'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  version:  # id of input
+    description: 'File descriptor set version'
+    required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'

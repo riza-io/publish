@@ -4,8 +4,5 @@ dist/index.js: lib/main.js node_modules
 lib/main.js: src/main.ts node_modules
 	./node_modules/.bin/tsc
 
-node_modules/.bin/tsc:
-	npm install
-
-node_modules/.bin/ncc:
+node_modules:
 	npm install
