@@ -3,10 +3,10 @@ import * as exec from '@actions/exec';
 import * as tc from '@actions/tool-cache';
 
 async function run() {
-  const cliPath = await tc.downloadTool('https://bin.equinox.io/a/cKDFpAZ81wg/riza-ea65f1553ae280357102c92562e4393a8439ee1f-linux-amd64.tar.gz');
+  const cliPath = await tc.downloadTool('https://bin.equinox.io/a/cKDFpAZ81wg/riza-f5162f7233bd59bfac4b598aca2f82776639a90e-linux-amd64.tar.gz');
   const extPath = await tc.extractTar(cliPath);
   
-  const cachedPath = await tc.cacheDir(extPath, 'riza', 'ea65f1553ae280357102c92562e4393a8439ee1f');
+  const cachedPath = await tc.cacheDir(extPath, 'riza', 'f5162f7233bd59bfac4b598aca2f82776639a90e');
   core.addPath(cachedPath);
   
   try {

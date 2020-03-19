@@ -1269,14 +1269,15 @@ const exec = __importStar(__webpack_require__(986));
 const tc = __importStar(__webpack_require__(533));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const cliPath = yield tc.downloadTool('https://bin.equinox.io/a/cKDFpAZ81wg/riza-ea65f1553ae280357102c92562e4393a8439ee1f-linux-amd64.tar.gz');
+        const cliPath = yield tc.downloadTool('https://bin.equinox.io/a/cKDFpAZ81wg/riza-f5162f7233bd59bfac4b598aca2f82776639a90e-linux-amd64.tar.gz');
         const extPath = yield tc.extractTar(cliPath);
-        const cachedPath = yield tc.cacheDir(extPath, 'riza', 'ea65f1553ae280357102c92562e4393a8439ee1f');
+        const cachedPath = yield tc.cacheDir(extPath, 'riza', 'f5162f7233bd59bfac4b598aca2f82776639a90e');
         core.addPath(cachedPath);
         try {
             const project = core.getInput('project');
             const version = core.getInput('version');
-            yield exec.exec('riza', [project, version]);
+            const path = core.getInput('path');
+            yield exec.exec('riza', [project, version, path]);
         }
         catch (error) {
             core.setFailed(error.message);
