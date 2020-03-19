@@ -12,7 +12,8 @@ async function run() {
   try {
     const project = core.getInput('project');
     const version = core.getInput('version');
-    await exec.exec('riza', [project, version]);
+    const path = core.getInput('path');
+    await exec.exec('riza', [project, version, path]);
   } catch (error) {
     core.setFailed(error.message);
   }

@@ -1,11 +1,14 @@
-name: 'Riza'
-description: 'Publish file descriptor sets to Riza'
+name: 'riza_publish'
+description: 'Publish file descriptor sets to Riza.io'
 inputs:
   project:  # id of project
-    description: 'Riza project ID'
+    description: 'Riza.io project ID'
     required: true
   version:  # id of input
     description: 'File descriptor set version'
+    required: true
+  path:  # id of input
+    description: 'Path to .proto file'
     required: true
 runs:
   using: 'node12'
