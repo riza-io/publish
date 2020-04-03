@@ -3,7 +3,7 @@ import * as exec from '@actions/exec';
 import * as tc from '@actions/tool-cache';
 
 async function run() {
-  const assetId = '8Mt3KdTHUth';
+  const assetId = '3soHzVjmQ48';
   const cliPath = await tc.downloadTool(`https://bin.equinox.io/a/${assetId}/riza-linux-amd64.tar.gz`);
   const extPath = await tc.extractTar(cliPath);
   
