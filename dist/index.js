@@ -22300,7 +22300,7 @@ module.exports = require("util");
 // GENERATED CODE -- DO NOT EDIT!
 
 var grpc = __webpack_require__(323);
-var riza_web_pb = __webpack_require__(970);
+var riza_web_pb = __webpack_require__(74);
 function serialize_riza_CreateOrganizationReq(arg) {
     if (!(arg instanceof riza_web_pb.CreateOrganizationReq)) {
         throw new Error('Expected argument of type riza.CreateOrganizationReq');
@@ -31753,14 +31753,6 @@ function unmonkeypatch () {
 module.exports = function spin (spinstr, spun) {
   return spinstr[spun % spinstr.length]
 }
-
-
-/***/ }),
-
-/***/ 970:
-/***/ (function(module) {
-
-module.exports = eval("require")("../riza/web_pb.js");
 
 
 /***/ }),
