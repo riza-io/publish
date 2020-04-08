@@ -1,11 +1,10 @@
 import * as core from '@actions/core';
+import * as riza from '@riza-io/grpc-client-stub';
+import * as grpc from 'grpc';
 import { readFileSync } from 'fs';
-import grpc = require('grpc');
 
-import services = require('./riza/web_grpc_pb');
-import messages = require('./riza/web_pb');
 
-const apiClient = new services.APIClient('grpc.riza.io', grpc.credentials.createSsl());
+const apiClient = new riza.APIClient('grpc.riza.io', grpc.credentials.createSsl());
 
 async function run() {
   try {
@@ -13,14 +12,14 @@ async function run() {
     const path = core.getInput('path');
     const protoBytes = readFileSync(path);
 
-    const req = new messages.PublishDescriptorsReq();
+    const req = new riza.PublishDescriptorsReq();
     req.setProjectId(project);
     const protosMap = req.getProtosMap();
     protosMap.set(path, protoBytes);
 
-    await function(): Promise<messages.PublishDescriptorsResp> {
-      return new Promise<messages.PublishDescriptorsResp>((resolve, reject) => {
-        apiClient.publishDescriptors(req, null, (err: grpc.callError, resp: messages.PublishDescriptorsResp) => {
+    await function(): Promise<riza.PublishDescriptorsResp> {
+      return new Promise<riza.PublishDescriptorsResp>((resolve, reject) => {
+        apiClient.publishDescriptors(req, null, (err: grpc.callError, resp: riza.PublishDescriptorsResp) => {
           err ? reject(err) : resolve(resp);
         });
       });
