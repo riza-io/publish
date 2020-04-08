@@ -5467,7 +5467,7 @@ const fs_1 = __webpack_require__(747);
 const grpc = __webpack_require__(323);
 const services = __webpack_require__(114);
 const messages = __webpack_require__(279);
-const apiClient = new services.APIClient('grpc-web.riza.io', grpc.credentials.createSsl());
+const apiClient = new services.APIClient('grpc.riza.io', grpc.credentials.createSsl());
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -7659,7 +7659,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 var binary = __webpack_require__(774);
 var path = __webpack_require__(622);
 var binding_path =
-    __webpack_require__.ab + "/extension_binary/node-v72-linux-x64-glibc/grpc_node.node";
+    __webpack_require__.ab + "extension_binary/node-v72-linux-x64-glibc/grpc_node.node";
 var binding;
 try {
   binding = __webpack_require__(707);

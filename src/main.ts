@@ -5,7 +5,7 @@ import grpc = require('grpc');
 import services = require('./riza/web_grpc_pb');
 import messages = require('./riza/web_pb');
 
-const apiClient = new services.APIClient('grpc-web.riza.io', grpc.credentials.createSsl());
+const apiClient = new services.APIClient('grpc.riza.io', grpc.credentials.createSsl());
 
 async function run() {
   try {
