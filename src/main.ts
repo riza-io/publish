@@ -19,8 +19,8 @@ async function run() {
 
     await function(): Promise<riza.PublishDescriptorsResp> {
       return new Promise<riza.PublishDescriptorsResp>((resolve, reject) => {
-        apiClient.publishDescriptors(req, null, (err: grpc.callError, resp: riza.PublishDescriptorsResp) => {
-          err ? reject(err) : resolve(resp);
+        apiClient.publishDescriptors(req, (error: grpc.ServiceError | null, response: riza.PublishDescriptorsResp) => {
+          error ? reject(error) : resolve(response);
         });
       });
     }();
