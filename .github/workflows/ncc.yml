@@ -9,3 +9,7 @@ jobs:
     - run: npm install
     - run: make
     - run: find dist
+    - uses: actions/upload-artifact@v1
+      with:
+        name: dist
+        path: dist
