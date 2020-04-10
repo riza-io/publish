@@ -1,5 +1,5 @@
 import * as core from '@actions/core';
-import * as riza from '@riza-io/grpc-client-stub';
+import * as riza from '@riza-io/riza';
 import * as grpc from 'grpc';
 import { readFileSync } from 'fs';
 

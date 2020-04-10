@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@actions/core": "1.2.3",
-    "@riza-io/grpc-client-stub": "1.0.8"
+    "@riza-io/riza": "latest"
   }
 }
