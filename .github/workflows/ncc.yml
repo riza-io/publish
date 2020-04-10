@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - run: find dist -type -f -exec exit 1 \;
     - run: npm install
     - run: make
     - run: find dist
