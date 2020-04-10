@@ -1,12 +1,16 @@
 name: dist
-on: [push]
+
+on:
+  push:
+    branches-ignore:
+      - 'release'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - run: find dist -type -f -exec exit 1 \;
+    - run: ./check.sh
     - run: npm install
     - run: make
     - run: find dist
