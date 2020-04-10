@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: ./check.sh
+    - run: npm config set @riza-io:registry https://npm.pkg.riza.io
     - run: npm install
     - run: make
     - run: find dist
