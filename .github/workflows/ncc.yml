@@ -1,0 +1,11 @@
+name: dist
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: npm install
+    - run: make
+    - run: find dist
