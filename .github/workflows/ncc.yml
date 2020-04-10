@@ -1,0 +1,20 @@
+name: dist
+
+on:
+  push:
+    branches-ignore:
+      - 'release'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: ./check.sh
+    - run: npm install
+    - run: make
+    - run: find dist
+    - uses: actions/upload-artifact@v1
+      with:
+        name: dist
+        path: dist

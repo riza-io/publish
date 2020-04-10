@@ -13,12 +13,11 @@
   "devDependencies": {
     "@types/node": "12.12.30",
     "@zeit/ncc": "^0.22.1",
+    "@types/google-protobuf": "3.7.2",
     "typescript": "3.8.3"
   },
   "dependencies": {
     "@actions/core": "1.2.3",
-    "@types/google-protobuf": "3.7.2",
-    "google-protobuf": "3.11.4",
-    "grpc": "1.24.2"
+    "@riza-io/grpc-client-stub": "1.0.8"
   }
 }

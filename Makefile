@@ -4,5 +4,5 @@ dist/index.js: lib/main.js node_modules
 lib/main.js: src/main.ts node_modules tsconfig.json
 	./node_modules/.bin/tsc
 
-node_modules:
+node_modules: package.json
 	npm install
