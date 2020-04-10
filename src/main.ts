@@ -1,5 +1,5 @@
 import * as core from '@actions/core';
-import * as riza from '@riza-io/grpc-client-stub';
+import * as riza from '@riza-io/riza';
 import * as grpc from 'grpc';
 import { readFileSync } from 'fs';
 
@@ -19,8 +19,8 @@ async function run() {
 
     await function(): Promise<riza.PublishDescriptorsResp> {
       return new Promise<riza.PublishDescriptorsResp>((resolve, reject) => {
-        apiClient.publishDescriptors(req, null, (err: grpc.callError, resp: riza.PublishDescriptorsResp) => {
-          err ? reject(err) : resolve(resp);
+        apiClient.publishDescriptors(req, (error: grpc.ServiceError | null, response: riza.PublishDescriptorsResp) => {
+          error ? reject(error) : resolve(response);
         });
       });
     }();
